@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import styles from '../styles/CreateProfile.module.css'; // or CreatePost.module.css
+import styles from '../styles/CreateProfile.module.css';
+import Link from "next/link"; // or CreatePost.module.css
+import sharedStyles from '../styles/SharedStyles.module.css';
+
 
 
 export default function CreateProfile() {
@@ -33,45 +36,56 @@ export default function CreateProfile() {
     };
 
     return (
-        <div className={styles.page}>
+        <div className={sharedStyles.page}>
+
+            {/* Back Button */}
+            <Link href="/" className={sharedStyles.backButton} aria-label="Back to Home">&lt;</Link>
+
             <h1>Create Desmos Profile</h1>
-            <form onSubmit={handleSubmit} className={styles.form}>
+
+            <form onSubmit={handleSubmit} className={sharedStyles.form}>
+
                 <label htmlFor="dtag" className={styles.label}>DTag</label>
-                <input
+                <input className={sharedStyles.input}
                     name="dtag"
                     value={profileData.dtag}
                     onChange={handleChange}
                     placeholder="DTag"
                 />
+
                 <label htmlFor="nickname" className={styles.label}>Nickname</label>
-                <input
+                <input className={sharedStyles.input}
                     name="nickname"
                     value={profileData.nickname}
                     onChange={handleChange}
                     placeholder="Nickname"
                 />
+
                 <label htmlFor="bio" className={styles.label}>Bio</label>
-                <textarea
+                <textarea className={sharedStyles.input}
                     name="bio"
                     value={profileData.bio}
                     onChange={handleChange}
                     placeholder="Bio"
                 />
+
                 <label htmlFor="profilePicture" className={styles.label}>Profile Picture URL</label>
-                <input
+                <input className={sharedStyles.input}
                     name="profilePicture"
                     value={profileData.profilePicture}
                     onChange={handleChange}
                     placeholder="Profile Picture URL"
                 />
+
                 <label htmlFor="coverPicture" className={styles.label}>Cover Picture URL</label>
-                <input
+                <input className={sharedStyles.input}
                     name="coverPicture"
                     value={profileData.coverPicture}
                     onChange={handleChange}
                     placeholder="Cover Picture URL"
                 />
-                <button type="submit">Create Profile</button>
+
+                <button type="submit" className={sharedStyles.button}>Create Profile</button>
             </form>
         </div>
     );

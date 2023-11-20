@@ -1,6 +1,9 @@
 // pages/create-post.js
 import React, { useState } from 'react';
 import styles from '../styles/CreatePost.module.css'; // Import the CSS module
+import sharedStyles from '../styles/SharedStyles.module.css';
+import Link from "next/link";
+
 
 export default function CreatePost() {
     const [postData, setPostData] = useState({ text: '' });
@@ -27,16 +30,20 @@ export default function CreatePost() {
     };
 
     return (
-        <div className={styles.page}>
-            <h1>Create a Post</h1>
-            <form onSubmit={handleSubmit}>
-        <textarea
+        <div className={sharedStyles.page}>
+            {/* Back Button */}
+            <Link href="/" className={sharedStyles.backButton} aria-label="Back to Home">&lt;</Link>
+
+            <h1 className={sharedStyles.title}>Create a Post</h1>
+
+            <form onSubmit={handleSubmit} className={sharedStyles.form}>
+        <textarea className={sharedStyles.textarea}
             name="text"
             value={postData.text}
             onChange={handleChange}
             placeholder="What's on your mind?"
         />
-                <button type="submit">Create Post</button>
+                <button type="submit" className={sharedStyles.button}>Create Post</button>
             </form>
         </div>
     );

@@ -8,15 +8,34 @@
   text-align: center;
 }
 
+.title {
+  /* ... existing styles ... */
+  margin-bottom: 50px; /* Add more space below the title */
+}
+
 .nav {
-  margin-top: 20px;
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
 }
 
 .link {
   background-color: orange;
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  margin: 10px;
+  padding: 15px 30px; /* Larger padding for a bigger button */
+  border: none;
+  border-radius: 5px; /* Rounded borders */
+  text-decoration: none; /* Remove underline from links */
+  margin: 10px; /* Spacing between buttons */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* Allow margin to take effect */
+}
+
+.link:hover {
+  background-color: #ff7000; /* Slightly darker on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.link:active {
+  transform: translateY(1px); /* Push down effect on click */
 }

@@ -1,0 +1,89 @@
+.page {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; /* Apple-like font */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.title {
+    font-size: 2em; /* Larger title for better visibility */
+    margin-bottom: 30px; /* Spacing from the title */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.button {
+    background-color: orange;
+    background-image: linear-gradient(to bottom, #ff8c00, #ff7000); /* Gradient effect */
+    color: white;
+    padding: 15px 30px; /* Larger padding for a bigger button */
+    font-size: 1em; /* Larger text for better readability */
+    border: none;
+    border-radius: 8px; /* Rounded borders */
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px #cc6a00, inset 0 2px 4px rgba(0,0,0,0.1); /* Shadow for 3D effect and inset */
+    transition: all 0.3s ease;
+    display: block; /* Make the button a block to fill the form width */
+    width: 100%; /* Full width of the form */
+}
+
+/* Adds a little "push" effect on click */
+.button:active {
+    box-shadow: 0 2px #cc6a00;
+    transform: translateY(2px);
+}
+
+.backButton {
+    background-color: #fff;
+    color: #333;
+    padding: 10px; /* Adjust padding to make the button larger and square */
+    border: 1px solid #ccc;
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5em; /* Larger font size for the arrow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height to make it square */
+    text-align: center;
+}
+
+.backButton:hover {
+    background-color: #f5f5f5; /* Slight change on hover for feedback */
+}
+
+.backButton:active {
+    transform: scale(0.95); /* Click animation */
+}
+
+.input,
+.textarea {
+    width: 100%; /* Full width */
+    padding: 12px;
+    margin-bottom: 20px; /* Increased spacing between fields */
+    border-radius: 8px; /* Rounded borders */
+    border: 1px solid #ccc; /* Light grey border */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); /* Slight inset shadow */
+    background-color: #fff; /* White background */
+    font-size: 1em; /* Ensures input text is 16px or larger */
+    color: #333; /* Darker text for better readability */
+}
